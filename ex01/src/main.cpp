@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 18:19:24 by stopp             #+#    #+#             */
-/*   Updated: 2025/01/15 12:29:54 by stopp            ###   ########.fr       */
+/*   Updated: 2025/01/15 16:27:14 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <iostream>
 #include <string>
 
+int		output_tst(int &i)
+{
+	std::cout << "returning i: " << i << std::endl;
+	return (i);
+}
 void	test_print_int(int &i)
 {
 	std::cout << i << std::endl;
@@ -28,7 +33,7 @@ int main(void)
 	std::string	strArray[4] = {"4", "2", "42", "41"};
 
 	std::cout << "----   Test with int array:" << std::endl;
-	::iter(intArray, 4, test_print_int);
+	::iter(intArray, 4, output_tst);
 	std::cout << "----   Test with str array:" << std::endl;
 	::iter(strArray, 4, test_print_str);
 }
